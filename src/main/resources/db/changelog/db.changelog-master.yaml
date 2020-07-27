@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - property:
+      name: dataSchema
+      value:
+      dbms: h2
+  - include:
+      file: db.changelogs.1.0.0.yaml
+      relativeToChangelogFile: true

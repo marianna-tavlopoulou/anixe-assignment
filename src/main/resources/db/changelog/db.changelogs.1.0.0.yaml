@@ -1,0 +1,111 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1.0.0-1
+      author: marianna.tavlopoulou
+      changes:
+        - createTable:
+            tableName: HOTEL
+            columns:
+              - column:
+                  name: ID
+                  type: varchar(32)
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: PK_HOTEL
+                    nullable: false
+              - column:
+                  name: INSERT_TS
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: INSERTED_BY
+                  type: varchar(128)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: UPDATE_TS
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: UPDATED_BY
+                  type: varchar(128)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: VERSION
+                  type: long
+                  constraints:
+                    nullable: false
+              - column:
+                  name: NAME
+                  type: varchar(128)
+              - column:
+                  name: ADDRESS
+                  type: varchar(128)
+              - column:
+                  name: STAR_RATING
+                  type: smallint
+                  constraints:
+                    nullable: true
+        - createTable:
+            tableName: BOOKING
+            columns:
+              - column:
+                  name: ID
+                  type: varchar(32)
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: PK_BOOKING
+                    nullable: false
+              - column:
+                  name: INSERT_TS
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: INSERTED_BY
+                  type: varchar(128)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: UPDATE_TS
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: UPDATED_BY
+                  type: varchar(128)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: VERSION
+                  type: long
+                  constraints:
+                    nullable: false
+              - column:
+                  name: CUSTOMER_NAME
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: CUSTOMER_SURNAME
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: PAX_NUMBER
+                  type: varchar(32)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: PRICE_AMOUNT
+                  type: DECIMAL(32,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: PRICE_CURRENCY
+                  type: VARCHAR(3)
+                  constraints:
+                    nullable: false
