@@ -6,6 +6,9 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ApplicationConfiguration {
+    public static final String HOTEL_REST_URL = "/api/hotels";
+    public static final String BOOKING_REST_URL = "/api/bookings";
+
 
     //    @Bean
     //    @ConfigurationProperties(prefix = "spring.datasource")

@@ -1,0 +1,147 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2.0.0-1
+      author: marianna.tavlopoulou
+      changes:
+        - insert:
+            tableName: HOTEL
+            columns:
+              - column:
+                  name: ID
+                  value: "001"
+              - column:
+                  name: INSERT_TS
+                  value: "2017-07-23 13:10:11.0"
+              - column:
+                  name: INSERTED_BY
+                  value: "SYSTEM"
+              - column:
+                  name: UPDATE_TS
+                  value: "2019-07-23 13:10:11.0"
+              - column:
+                  name: UPDATED_BY
+                  value: "SYSTEM"
+              - column:
+                  name: VERSION
+                  value: 1
+              - column:
+                  name: NAME
+                  value: "MARI HOTEL"
+              - column:
+                  name: ADDRESS
+                  value: "Naxou 5"
+              - column:
+                  name: STAR_RATING
+                  value: 5
+        - insert:
+            tableName: HOTEL
+            columns:
+              - column:
+                  name: ID
+                  value: "002"
+              - column:
+                  name: INSERT_TS
+                  value: "2019-07-23 13:10:11.0"
+              - column:
+                  name: INSERTED_BY
+                  value: "SYSTEM"
+              - column:
+                  name: UPDATE_TS
+                  value: "2020-07-23 13:10:11.0"
+              - column:
+                  name: UPDATED_BY
+                  value: "SYSTEM"
+              - column:
+                  name: VERSION
+                  value: 1
+              - column:
+                  name: NAME
+                  value: "MALLIA HOTEL"
+              - column:
+                  name: ADDRESS
+                  value: "Kritis 5"
+              - column:
+                  name: STAR_RATING
+                  value: 4
+  - changeSet:
+      id: 2.0.0-2
+      author: marianna.tavlopoulou
+      changes:
+        - insert:
+            tableName: BOOKING
+            columns:
+              - column:
+                  name: ID
+                  value: "0001"
+              - column:
+                  name: INSERT_TS
+                  value: "2017-07-23 13:10:11.0"
+              - column:
+                  name: INSERTED_BY
+                  value: "SYSTEM"
+              - column:
+                  name: UPDATE_TS
+                  value: "2019-07-23 13:10:11.0"
+              - column:
+                  name: UPDATED_BY
+                  value: "SYSTEM"
+              - column:
+                  name: VERSION
+                  value: 1
+              - column:
+                  name: HOTEL_ID
+                  value: "001"
+              - column:
+                  name: CUSTOMER_NAME
+                  value: "Marianna"
+              - column:
+                  name: CUSTOMER_SURNAME
+                  value: "Tavlopoulou"
+              - column:
+                  name: PAX_NUMBER
+                  value: "001"
+              - column:
+                  name: PRICE_AMOUNT
+                  value: 152.55
+              - column:
+                  name: PRICE_CURRENCY
+                  value: "EUR"
+        - insert:
+            tableName: BOOKING
+            columns:
+              - column:
+                  name: ID
+                  value: "0002"
+              - column:
+                  name: INSERT_TS
+                  value: "2020-07-23 13:10:11.0"
+              - column:
+                  name: INSERTED_BY
+                  value: "SYSTEM"
+              - column:
+                  name: UPDATE_TS
+                  value: "2020-07-23 13:10:11.0"
+              - column:
+                  name: UPDATED_BY
+                  value: "SYSTEM"
+              - column:
+                  name: VERSION
+                  value: 1
+              - column:
+                  name: HOTEL_ID
+                  value: "002"
+              - column:
+                  name: CUSTOMER_NAME
+                  value: "Marianna"
+              - column:
+                  name: CUSTOMER_SURNAME
+                  value: "Tavlopoulou"
+              - column:
+                  name: PAX_NUMBER
+                  value: "002"
+              - column:
+                  name: PRICE_AMOUNT
+                  value: 2052.55
+              - column:
+                  name: PRICE_CURRENCY
+                  value: "EUR"

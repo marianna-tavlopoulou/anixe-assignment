@@ -85,6 +85,13 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
+                  name: HOTEL_ID
+                  type: varchar(32)
+                  constraints:
+                    foreignKeyName: FK_HOTEL
+                    references: HOTEL(ID)
+                    nullable: false
+              - column:
                   name: CUSTOMER_NAME
                   type: varchar(64)
                   constraints:

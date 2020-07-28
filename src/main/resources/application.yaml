@@ -32,10 +32,17 @@ management:
     web:
       base-path: /monitoring
       exposure:
-        include: "health,info"
+        include: "health,info,httptrace"
   endpoint:
     health:
       show-details: ALWAYS
+  trace:
+    http:
+      enabled: true
+  info:
+    git:
+      mode: full
+
 
 #trn-app:
 #  url-patterns:
@@ -44,6 +51,7 @@ management:
 #  debug:
 #    true
 # Swagger
+
 app:
   swagger:
     protocol: http
