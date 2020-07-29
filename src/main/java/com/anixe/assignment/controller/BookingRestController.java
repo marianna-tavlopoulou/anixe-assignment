@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * Rest Controller that manipulates bookings
+ */
 @RestController
 @Slf4j
 @RequiredArgsConstructor
@@ -17,12 +20,22 @@ public class BookingRestController {
 
     private final BookingService bookingService;
 
+    /**
+     * POST endpoint that inserts a new booking for a hotel. If the hotel does not exist we insert it.
+     * @param bookingDto BookingDto
+     * @return BookingDto
+     */
     @PostMapping
     public BookingDto addNewBooking(@RequestBody BookingDto bookingDto) {
 
         return bookingService.createBooking(bookingDto);
     }
 
+    /**
+     * Rest endpoint that returns all the bookings that a particular hotel has
+     * @param hotelId String
+     * @return List<BookingDto>
+     */
     @GetMapping
     public List<BookingDto> getBookings(@RequestParam("hotel-id") String hotelId) {
 

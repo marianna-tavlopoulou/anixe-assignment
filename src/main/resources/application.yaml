@@ -56,3 +56,6 @@ app:
   swagger:
     protocol: http
     host: localhost:9000
+
+loggingProperties:
+  isDebug: true

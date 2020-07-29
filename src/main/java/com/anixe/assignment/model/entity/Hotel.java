@@ -3,7 +3,8 @@ package com.anixe.assignment.model.entity;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Data
@@ -19,12 +20,18 @@ public class Hotel extends AbstractEntity {
     private String address;
     @Column(name = "STAR_RATING")
     private int starRating;
-    @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(targetEntity = Booking.class, fetch = FetchType.LAZY, mappedBy = "hotel")
+    @Builder.Default
     private Set<Booking> bookings = new HashSet<>();
 
     public void addBooking(Booking booking) {
         bookings.add(booking);
         booking.setHotel(this);
+    }
+
+    public void removeBooking(Booking booking){
+        bookings.remove(booking);
+        booking.setHotel(null);
     }
 
 }

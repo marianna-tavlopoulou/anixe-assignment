@@ -11,11 +11,11 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@EqualsAndHashCode(callSuper = true, exclude="hotel")
+@EqualsAndHashCode(callSuper = true, exclude = "hotel")
 public class Booking extends AbstractEntity {
 
+    @ManyToOne(targetEntity = Hotel.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "HOTEL_ID")
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @NotNull
     private Hotel hotel;
 
@@ -33,5 +33,10 @@ public class Booking extends AbstractEntity {
 
     @Column(name = "PRICE_CURRENCY")
     private String currency;
+
+    @PrePersist
+    public void checkHotel() {
+        assert this.hotel != null;
+    }
 
 }

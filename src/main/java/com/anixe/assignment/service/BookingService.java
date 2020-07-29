@@ -40,9 +40,8 @@ public class BookingService {
 
     public List<BookingDto> getAllHotelBookings(String id) {
         Optional<Hotel> hotelOptional = hotelRepository.getById(id);
-        return hotelOptional.map(hotel -> bookingRepository.getAllByHotel(hotel)
-            .stream()
-            .map(bookingEntityToDtoMapper::mapToBookingDto)
-            .collect(Collectors.toList())).orElse(Collections.emptyList());
+        return hotelOptional.map(
+            hotel -> hotel.getBookings().stream().map(bookingEntityToDtoMapper::mapToBookingDto).collect(Collectors.toList()))
+            .orElse(Collections.emptyList());
     }
 }

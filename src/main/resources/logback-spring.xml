@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+
+    <springProfile name="local">
+        <property name="LOG_FILE" value="/var/log/tavlopoulou-assignment/anixe-assignment.log"/>
+        <appender name="STDOUT" class="ch.qos.logback.core.FileAppender">
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <Pattern>
+                    %date [%thread] %-5level %logger{36} - [%mdc{correlationId}] %msg %n
+                </Pattern>
+            </layout>
+            <file>${LOG_FILE}</file>
+        </appender>
+
+        <root level="INFO">
+            <appender-ref ref="STDOUT"/>
+        </root>
+        <logger name="com.anixe" level="INFO"/>
+    </springProfile>
+</configuration>

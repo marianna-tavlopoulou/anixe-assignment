@@ -48,6 +48,7 @@ public abstract class AbstractEntity {
     public void preUpdate() {
         this.setUpdatedAt(LocalDateTime.now());
         this.setUpdatedBy(SYSTEM);
+        this.setVersion(version++);
     }
 
     public static String uniqueId() {
