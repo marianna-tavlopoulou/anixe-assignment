@@ -19,6 +19,11 @@ public class HotelService {
     private final HotelEntityToDtoMapper hotelMapper;
     private final DtoToHotelEntityMapper hotelDtoMapper;
 
+    /**
+     * Gets all hotels that a customer has bookings for
+     * @param surname String
+     * @return List<HotelDto>
+     */
     public List<HotelDto> getHotelsBookedByCustomer(String surname) {
 
         return hotelRepository.getHotelsBookedByCustomer(surname)
@@ -27,6 +32,11 @@ public class HotelService {
             .collect(Collectors.toList());
     }
 
+    /**
+     * Inserts a hotel in our database
+     * @param hotelDto HotelDto
+     * @return Hotel
+     */
     public Hotel insertHotel(HotelDto hotelDto) {
         return hotelRepository.save(hotelDtoMapper.mapToHotelDto(hotelDto));
     }

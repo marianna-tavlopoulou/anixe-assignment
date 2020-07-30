@@ -5,6 +5,9 @@ import lombok.*;
 
 import java.math.BigDecimal;
 
+/**
+ * Data transfer object that holds information for bookings
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

@@ -2,12 +2,11 @@ package com.anixe.assignment.controller;
 
 import com.anixe.assignment.config.ApplicationConfiguration;
 import com.anixe.assignment.model.dto.BookingDto;
+import com.anixe.assignment.model.dto.BookingResponse;
 import com.anixe.assignment.service.BookingService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 /**
  * Rest Controller that manipulates bookings
@@ -34,11 +33,11 @@ public class BookingRestController {
     /**
      * Rest endpoint that returns all the bookings that a particular hotel has
      * @param hotelId String
-     * @return List<BookingDto>
+     * @return BookingResponse
      */
     @GetMapping
-    public List<BookingDto> getBookings(@RequestParam("hotel-id") String hotelId) {
+    public BookingResponse getBookings(@RequestParam("hotel-id") String hotelId) {
 
-        return bookingService.getAllHotelBookings(hotelId);
+        return BookingResponse.builder().bookings(bookingService.getAllHotelBookings(hotelId)).build();
     }
 }

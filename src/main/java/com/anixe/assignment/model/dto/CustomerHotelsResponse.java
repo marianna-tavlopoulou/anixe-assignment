@@ -5,6 +5,9 @@ import lombok.*;
 
 import java.util.List;
 
+/**
+ * Data transfer object that holds a list of HotelDto
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

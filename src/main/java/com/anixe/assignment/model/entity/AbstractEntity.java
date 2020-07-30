@@ -7,8 +7,9 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-
-
+/**
+ * Abstract entity that is used to insert system info for each entity
+ */
 @MappedSuperclass
 @Data
 public abstract class AbstractEntity {

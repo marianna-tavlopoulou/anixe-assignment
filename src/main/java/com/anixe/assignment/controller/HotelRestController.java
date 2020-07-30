@@ -34,7 +34,7 @@ public class HotelRestController {
     }
 
     /**
-     * Rest endpoint that returns
+     * Rest endpoint that returns total price amount for all bookings of a specific hotel
      * @param hotelId String
      * @return String
      */

@@ -6,6 +6,9 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
+/**
+ * Persistent entity Booking. Many-to-one relationship with Hotel entity
+ */
 @Entity
 @Data
 @AllArgsConstructor

@@ -3,19 +3,19 @@ package com.anixe.assignment.model.dto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 
+import java.util.List;
+
 /**
- * Data transfer object that holds information for hotels
+ * Data transfer object that holds a list of BookingDto
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@EqualsAndHashCode
-public class HotelDto {
+public class BookingResponse {
 
-    private String id;
-    private String name;
-    private String address;
-    private int starRating;
+    private List<BookingDto> bookings;
+
+
 }

@@ -9,6 +9,7 @@ import com.anixe.assignment.repository.BookingRepository;
 import com.anixe.assignment.repository.HotelRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -22,14 +23,24 @@ public class BookingService {
     private final DtoToBookingEntityMapper bookingMapper;
     private final BookingEntityToDtoMapper bookingEntityToDtoMapper;
 
-
+    /**
+     * Inserts a new booking for a hotel. If hotel does not exist create a new one
+     * @param bookingDto BookingDto
+     * @return BookingDto
+     */
     public BookingDto createBooking(BookingDto bookingDto) {
-
+        Assert.notNull(bookingDto, "Please provide booking information");
+        Assert.notNull(bookingDto.getHotelDto(), "Hotel details may not be empty");
         Booking booking = bookingRepository.save(bookingMapper.mapToHotelDto(bookingDto));
         return bookingEntityToDtoMapper.mapToBookingDto(booking);
 
     }
 
+    /**
+     * Gets all bookings total price amount for a specific hotel
+     * @param id String
+     * @return String
+     */
     public String getTotalAmountForHotel(String id) {
         Optional<Hotel> hotelOptional = hotelRepository.getById(id);
         if (hotelOptional.isPresent()) {
@@ -38,6 +49,11 @@ public class BookingService {
         return "No hotel found with given id";
     }
 
+    /**
+     * Gets all bookings for a specific hotel
+     * @param id String
+     * @return List<BookingDto>
+     */
     public List<BookingDto> getAllHotelBookings(String id) {
         Optional<Hotel> hotelOptional = hotelRepository.getById(id);
         return hotelOptional.map(

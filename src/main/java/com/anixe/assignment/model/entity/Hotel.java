@@ -6,6 +6,9 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Persistent entity Hotel. One-to-many relationship with Booking entity
+ */
 @Entity
 @Data
 @AllArgsConstructor
