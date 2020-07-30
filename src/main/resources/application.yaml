@@ -2,7 +2,6 @@ application:
   version: 0.0.1
 server:
   port: 8080
-  max-http-header-size: 10000000 # this is required to handle the long size JWT
   servlet:
     context-path: /assignment-app
 spring:
@@ -42,15 +41,6 @@ management:
   info:
     git:
       mode: full
-
-
-#trn-app:
-#  url-patterns:
-#    - /callcenter-api/transactions/*
-#    - /reconciliation/*
-#  debug:
-#    true
-# Swagger
 
 app:
   swagger:

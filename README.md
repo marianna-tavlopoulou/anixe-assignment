@@ -11,8 +11,7 @@ gradlew clean build
 gradlew bootRun
 ### 4. Check the health status of your application:
 curl -X GET http://localhost:9000/assignment-app/monitoring/health
-### 5. The application is running with H2 persistent database. Connect with h2 db with the following
- link:
+### 5. The application is running with H2 persistent database. Connect with h2 db with the following link:
 http://localhost:8080/assignment-app/h2-console
 ### 6. API Documentation is available through the link below:
 http://localhost:8080/assignment-app/swagger-ui.html
